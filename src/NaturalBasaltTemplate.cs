@@ -28,7 +28,8 @@ namespace Eco.Mods.TechTree
     [LocDisplayName("Natural Basalt")]
     [MaxStackSize(10)]
     [Weight(30000)]
-	[Tag("Constructable", 1)]
+    [Tag("Constructable", 1)]
+    [Tag("NaturalStone", 1)]
     public partial class NatrualBasaltItem : BlockItem<BasaltBlock>
     {
         public override LocString DisplayNamePlural { get { return Localizer.DoStr("Natural Basalt"); } }
