@@ -25,41 +25,40 @@ namespace Eco.Mods.TechTree
     using Eco.Gameplay.Pipes;
 	
     [Serialized]
-    [LocDisplayName("Raw Basalt")]
+    [LocDisplayName("_TEMPLATE_DISPLAYNAME_")]
     [MaxStackSize(10)]
     [Weight(30000)]
     [Tag("Constructable", 1)]
     [Tag("RawStone", 1)]
-    public partial class RawBasaltItem : BlockItem<BasaltBlock>
+    public partial class _TEMPLATE_NAME_Item : BlockItem<_TEMPLATE_BLOCKNAME_>
     {
-        public override LocString DisplayNamePlural { get { return Localizer.DoStr("Raw Basalt"); } }
+        public override LocString DisplayNamePlural { get { return Localizer.DoStr("_TEMPLATE_DISPLAYNAME_"); } }
     }
 	
     [RequiresSkill(typeof(MiningSkill), 5)]
-    public partial class RawBasaltRecipe : RecipeFamily
+    public partial class _TEMPLATE_NAME_Recipe : RecipeFamily
     {
-        public RawBasaltRecipe()
+        public _TEMPLATE_NAME_Recipe()
         {
             var recipe = new Recipe();
             recipe.Init(
-                "RawBasalt",  //noloc
-                Localizer.DoStr("Raw Basalt"),
+                "_TEMPLATE_NAME_",  //noloc
+                Localizer.DoStr("_TEMPLATE_DISPLAYNAME_"),
                 new List<IngredientElement>
                 {
-                    new IngredientElement(typeof(BasaltItem), 6),
+                    new IngredientElement(typeof(_TEMPLATE_INGREDIENTNAME_), 6),
                     new IngredientElement(typeof(MortarItem), 2, typeof(MiningSkill)),
                 },
                 new List<CraftingElement>
                 {
-                    new CraftingElement<RawBasaltItem>()
+                    new CraftingElement<_TEMPLATE_NAME_Item>()
                 });
             this.Recipes = new List<Recipe> { recipe };
-            this.ExperienceOnCraft = 0.5f;
             this.LaborInCalories = CreateLaborInCaloriesValue(40, typeof(MiningSkill));
-            this.CraftMinutes = CreateCraftTimeValue(typeof(RawBasaltRecipe), .25f, typeof(MiningSkill));
+            this.CraftMinutes = CreateCraftTimeValue(typeof(_TEMPLATE_NAME_Recipe), .25f, typeof(MiningSkill));
 			
             this.ModsPreInitialize();
-            this.Initialize(Localizer.DoStr("Raw Basalt"), typeof(RawBasaltRecipe));
+            this.Initialize(Localizer.DoStr("_TEMPLATE_DISPLAYNAME_"), typeof(_TEMPLATE_NAME_Recipe));
             this.ModsPostInitialize();
 			
             CraftingComponent.AddRecipe(typeof(MasonryTableObject), this);
