@@ -46,7 +46,7 @@ namespace Eco.Mods.TechTree
                 Localizer.DoStr("_TEMPLATE_DISPLAYNAME_"),
                 new List<IngredientElement>
                 {
-                    new IngredientElement(typeof(_TEMPLATE_INGREDIENTNAME_), 6),
+                    new IngredientElement(typeof(_TEMPLATE_INGREDIENTNAME_), 8, typeof(MiningSkill)),
                     new IngredientElement(typeof(MortarItem), 2, typeof(MiningSkill)),
                 },
                 new List<CraftingElement>
