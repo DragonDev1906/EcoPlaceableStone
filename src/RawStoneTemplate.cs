@@ -23,13 +23,14 @@ namespace Eco.Mods.TechTree
     using Eco.World;
     using Eco.World.Blocks;
     using Eco.Gameplay.Pipes;
+    using Eco.Gameplay.Items.Recipes;
 	
     [Serialized]
     [LocDisplayName("_TEMPLATE_DISPLAYNAME_")]
     [MaxStackSize(10)]
     [Weight(30000)]
-    [Tag("Constructable", 1)]
-    [Tag("RawStone", 1)]
+    [Tag("Constructable")]
+    [Tag("RawStone")]
     public partial class _TEMPLATE_NAME_Item : BlockItem<_TEMPLATE_BLOCKNAME_>
     {
         public override LocString DisplayNamePlural { get { return Localizer.DoStr("_TEMPLATE_DISPLAYNAME_"); } }
